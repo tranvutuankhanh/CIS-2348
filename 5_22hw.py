@@ -9,9 +9,9 @@ print("Tire rotation -- $19")
 print("Car wash -- $7")
 print("Car wax -- $12")
 
-print("\nSelect first service: ")
+print("\nSelect first service:")
 first_service = input()
-print("Select second service: ")
+print("Select second service:")
 second_service = input()
 
 total = 0
@@ -53,4 +53,4 @@ elif second_service == "-":
 else:
     print("Service 2: Invalid entry")
 
-print("\nTotal: $",total)
+print(f'\nTotal: ${total}')
