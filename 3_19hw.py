@@ -6,10 +6,10 @@
 #Part 1: Ask users input height and width.
 # Then calculate and output the area of wall.
 
-print('Enter wall height (feet) :')
+print('Enter wall height (feet):')
 height = int(input())
 
-print('Enter wall width (feet) :')
+print('Enter wall width (feet):')
 width = int(input())
 
 area = height * width
