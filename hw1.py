@@ -25,7 +25,7 @@ else:
     years = current_year - birth_year - 1
 
 if current_month == birth_month and current_day == birth_day:
-    print('Happy Birthday')
+    print('Happy Birthday!')
 
 if current_month > 12:
     print('Input current month error!')
@@ -35,5 +35,7 @@ elif birth_month > 12:
     print('Input birth month error!')
 elif birth_day > 31:
     print('Input birth day error!')
+elif birth_year > current_year:
+    print('Input birth year error!')
 else:
     print('You are ' + str(years) + ' years old.')
