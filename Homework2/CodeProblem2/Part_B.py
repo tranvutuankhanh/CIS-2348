@@ -1,6 +1,8 @@
 #Name: Vu Tran
 #Student ID: 2233511
 
+#Part B for Code Problem 02
+
 from datetime import datetime
 
 current_date = datetime.now()
