@@ -1,6 +1,8 @@
 #Vu Tran
 #Student ID: 2233511
 
+#Part A for Code problem 02
+
 from datetime import datetime
 
 # Get the current date
