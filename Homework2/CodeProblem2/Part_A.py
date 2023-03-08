@@ -1,7 +1,7 @@
-#Name: Vu Tran
-#Student ID: 2233511
+# Name: Vu Tran
+# Student ID: 2233511
 
-#Part A for Code Problem 02
+# Part A for Code Problem 02
 
 from datetime import datetime
 
