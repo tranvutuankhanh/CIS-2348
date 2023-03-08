@@ -1,5 +1,5 @@
-#Name: Vu Tran
-#Student ID: 2233511
+# Name: Vu Tran
+# Student ID: 2233511
 
 # Part C for Code Problem 02
 
