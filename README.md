@@ -1,6 +1,7 @@
 # Homework3 Zybooks project.
 
 #10_11
+
 This project defines a Python class called FoodItem that represents a food 
 item with nutritional information. It includes a constructor to initialize the name, fat,
 carbohydrates, and protein content of a food item, as well as methods to calculate the number of calories 
@@ -18,6 +19,7 @@ The get_calories(num_servings) method calculates the number of calories in a giv
 The method takes one parameter, num_servings, which specifies the number of servings to calculate calories for.
 
 #10_15
+
 This is a project that implements a Team class in Python. 
 The Team class contains properties for a team name, number of team wins, and number of team losses. 
 The class also contains a method get_win_percentage() that calculates the percentage of wins for a team.
@@ -35,6 +37,7 @@ The output will be either "Congratulations, Team {team name} has a winning avera
 or "Team {team name} has a losing average." depending on the team's win percentage.
 
 #10_17
+
 This is a simple project that demonstrates the use of a Python class 
 to create objects that represent items for purchase, and calculate the total cost of those items.
 
@@ -43,6 +46,7 @@ The script will prompt the user to enter information for two items, including th
 It will then create two objects of the ItemToPurchase class, calculate the total cost of the items, and output the result.
 
 #10_19
+
 1.The ItemToPurchase class contains the following attributes:
 
 item_name: a string representing the name of the item (default: "none")
@@ -74,6 +78,7 @@ Choose an option and follow the prompts to add, remove, modify, or view items in
 The program will continue to run until you choose the "q" option to quit.
 
 #11_18
+
 This program takes a list of integers as input, and outputs 
 the non-negative integers in ascending order.
 
@@ -82,6 +87,7 @@ Once you have entered the list, press enter and
 the program will output the non-negative integers in ascending order.
 
 #11_22
+
 This is a simple Python program that reads a list of words from the user and outputs each word along with its frequency. 
 The program is useful for analyzing text data and identifying the most common words in a given document or corpus.
 
@@ -90,6 +96,7 @@ It loops through each word in the list and adds it to the dictionary if it doesn
 or increments its count if it does. Finally, it prints out each word and its frequency.
 
 #11_27
+
 This is a Python program that stores roster and rating information for a soccer team. 
 Coaches can rate players during tryouts to ensure a balanced team. 
 The program allows the user to input five pairs of numbers, where each pair represents a player's jersey number and rating. 
