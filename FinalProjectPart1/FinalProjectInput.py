@@ -17,7 +17,7 @@ class ElectronicsInventory:
         with open(filename, 'r') as file:
             reader = csv.reader(file)
             for row in reader:
-                item_id, manufacturer, item_type, damaged = row[0], row[1].strip(), row[2], row[3] if len(
+                item_id, manufacturer, item_type, damaged = row[0], row[1], row[2], row[3] if len(
                     row) == 4 else ''
                 self.inventory[item_id] = {'manufacturer': manufacturer, 'item_type': item_type, 'damaged': damaged}
                 self.item_types.add(item_type)
@@ -86,7 +86,7 @@ class ElectronicsInventory:
             for past_item_id, past_item in past_service_items:
                 writer.writerow(
                     [past_item_id, past_item['manufacturer'], past_item['item_type'], int(past_item['price']),
-                     past_item['service_date'].strftime('%-m/%-d/%Y')])
+                     past_item['service_date'].strftime('%-m/%-d/%Y'), past_item['damaged']])
 
     # Generate a damaged inventory CSV file sorted by descending price
     def generate_damaged_inventory_csv(self):
@@ -100,6 +100,34 @@ class ElectronicsInventory:
                 if item['damaged']:
                     writer.writerow([item_id, item['manufacturer'], item['item_type'], int(item['price']),
                                      item['service_date'].strftime('%-m/%-d/%Y')])
+
+    def generate_tower_inventory_csv(self):
+        with open('TowerInventory.csv', 'w', newline='') as file:
+            writer = csv.writer(file)
+            # Loop over the inventory items sorted by ID
+            for item_id, item in sorted(self.inventory.items()):
+                # Write to the CSV file only if the item is a tower
+                if item['item_type'] == 'tower':
+                    # Extract the relevant data from the item dictionary
+                    damaged = item.get('damaged', '')
+                    price = int(item['price']) if 'price' in item else ''
+                    service_date = item.get('service_date', '').strftime('%-m/%-d/%Y')
+                    # Write a new row to the CSV file with the extracted data
+                    writer.writerow([item_id, item['manufacturer'], price, service_date, damaged])
+
+    def generate_phone_inventory_csv(self):
+        with open('PhoneInventory.csv', 'w', newline='') as file:
+            writer = csv.writer(file)
+            # Loop over the inventory items sorted by ID
+            for item_id, item in sorted(self.inventory.items()):
+                # Write to the CSV file only if the item is a phone
+                if item['item_type'] == 'phone':
+                    # Extract the relevant data from the item dictionary
+                    damaged = item.get('damaged', '')
+                    price = int(item['price']) if 'price' in item else ''
+                    service_date = item.get('service_date', '').strftime('%-m/%-d/%Y')
+                    # Write a new row to the CSV file with the extracted data
+                    writer.writerow([item_id, item['manufacturer'], price, service_date, damaged])
 
 
 # The main function to run the script
@@ -115,11 +143,14 @@ def main():
     inventory.load_price_list(price_list_file)
     inventory.load_service_dates_list(service_dates_list_file)
 
-    # Generate the full inventory, laptop inventory, past service date inventory, and damaged inventory CSV files
+    # Generate the full inventory, laptop inventory, past service date inventory, damaged inventory,
+    # Tower inventory, and Phone inventory CSV files
     inventory.generate_full_inventory_csv()
     inventory.generate_laptop_inventory_csv()
     inventory.generate_past_service_date_inventory_csv()
     inventory.generate_damaged_inventory_csv()
+    inventory.generate_tower_inventory_csv()
+    inventory.generate_phone_inventory_csv()
 
 
 # Run the main function if the script is run as the main module
