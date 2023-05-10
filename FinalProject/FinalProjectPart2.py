@@ -4,6 +4,7 @@
 import csv
 from datetime import datetime
 
+
 # This class is responsible for managing the inventory of electronic items
 class ElectronicsInventory:
     def __init__(self):
@@ -37,6 +38,7 @@ class ElectronicsInventory:
                 item_id, service_date = row[0], datetime.strptime(row[1], '%m/%d/%Y')
                 if item_id in self.inventory:
                     self.inventory[item_id]['service_date'] = service_date
+
 
 # This class is responsible for generating various inventory reports by extending the ElectronicsInventory class
 class InventoryReports(ElectronicsInventory):
@@ -180,12 +182,15 @@ class InventoryReports(ElectronicsInventory):
                     min_price_diff = price_diff
                     closest_item = item
 
-        result = f"Your item is: {most_expensive_item[0]}, {most_expensive_item[1]['manufacturer']}, {most_expensive_item[1]['item_type']}, {int(most_expensive_item[1]['price'])}"
+        result = f"Your item is: {most_expensive_item[0]}, {most_expensive_item[1]['manufacturer']}, " \
+                 f"{most_expensive_item[1]['item_type']}, {int(most_expensive_item[1]['price'])}"
 
         if closest_item:
-            result += f"\nYou may, also, consider: {closest_item[0]}, {closest_item[1]['manufacturer']}, {closest_item[1]['item_type']}, {int(closest_item[1]['price'])} "
+            result += f"\nYou may, also, consider: {closest_item[0]}, {closest_item[1]['manufacturer']}, " \
+                      f"{closest_item[1]['item_type']}, {int(closest_item[1]['price'])} "
 
         return result
+
 
 # Main function to run the inventory application
 def main():
